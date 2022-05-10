@@ -94,17 +94,15 @@ text-decoration: underline;
 
 .footer {
 position: fixed;
+bottom: 0px;
 width: auto;
-right: 0;
-bottom: 0;
 
-background-color: white;
-color: black;
+
 text-align: center;
 }
 </style>
 <div class="footer">
-<p>This data was provided by the <a style='display: block; text-align: center;' href="https://www.bls.gov/iag/tgs/iag_index_alpha.htm" target="_blank">US Bureau of Labor Statistics</a></p>
+<p>This data was provided by the <a href="https://www.bls.gov/iag/tgs/iag_index_alpha.htm" target="_blank">US Bureau of Labor Statistics</a></p>
 </div>
 """
 st.markdown(footer, unsafe_allow_html=True)
