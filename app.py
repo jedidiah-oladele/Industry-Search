@@ -72,7 +72,7 @@ if __name__ == '__main__':
 
 
     # TODO Turn to footer
-    st.write('This data was provided by the [US Bureau of Labor Statistics](https://www.bls.gov/iag/tgs/iag_index_alpha.htm)')
+    #st.write('This data was provided by the [US Bureau of Labor Statistics](https://www.bls.gov/iag/tgs/iag_index_alpha.htm)')
 
 
 
@@ -94,7 +94,7 @@ text-decoration: underline;
 
 .footer {
 position: fixed;
-bottom: 0px;
+bottom: 20px;
 width: auto;
 
 
