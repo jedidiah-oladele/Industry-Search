@@ -3,14 +3,6 @@ import pandas as pd
 import random
 
 
-TASKS = ['Data Collection and Cleaning',
-        'Exploratory Data Analysis',
-        'Data Visualization',
-        'Article and Explainer blog',
-        'Modelling and Deployment'
-        ]
-
-
 data_source="""
 <div class="footer">
 <p style="font-size:0.9em; text-align:center; padding:30px">This data was provided by The <a href="https://www.bls.gov/iag/tgs/iag_index_alpha.htm">US Bureau of Labor Statistics</a></p>
@@ -21,8 +13,6 @@ data_source="""
 
 def get_random():
     """Loads the random page"""
-    task = random.choice(TASKS)
-    st.markdown(f'##### Task: {task}')
 
     random_row = df.iloc[random.randint(0, len(df)-1)]
     st.markdown(f"##### Sector: {random_row['Sector']}")
