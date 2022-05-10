@@ -3,8 +3,13 @@ import pandas as pd
 import random
 
 
+TASKS = ['Data Collection and Cleaning', 'Exploratory Data Analysis', 'Data Visualization', 'Article and Explainer blog', 'Modelling and Deployment']
+
 def get_random():
     """Loads the random page"""
+    task = random.choice(TASKS)
+    st.markdown(f'##### Task: {task}')
+
     random_row = df.iloc[random.randint(0, len(df)-1)]
     st.markdown(f"##### Sector: {random_row['Sector']}")
     st.markdown(f"##### Industry: {random_row['Industry']}")
@@ -12,6 +17,7 @@ def get_random():
     with st.expander('About'):
         st.write(random_row['Industry_description'])
         st.write(f"[Read more]({random_row['Industry_URL']})")
+
 
 
 def explore():
@@ -42,9 +48,9 @@ if __name__ == '__main__':
 
     # Button asthetics
     st.write('')
-    _, col2, _, col4, _ = st.columns([1,1,1,1,1])
-    random_button = col2.button('Random')
-    explore_button = col4.button('Explore')
+    col1, _, col3 = st.columns([1,3,1])
+    random_button = col1.button('Random')
+    explore_button = col3.button('Explore')
     st.write('')
 
 
@@ -67,3 +73,38 @@ if __name__ == '__main__':
 
     # TODO Turn to footer
     st.write('This data was provided by the [US Bureau of Labor Statistics](https://www.bls.gov/iag/tgs/iag_index_alpha.htm)')
+
+
+
+
+
+
+footer="""<style>
+a:link , a:visited{
+color: blue;
+background-color: transparent;
+text-decoration: underline;
+}
+
+a:hover,  a:active {
+color: red;
+background-color: transparent;
+text-decoration: underline;
+}
+
+.footer {
+position: fixed;
+width: 20%;
+right: 0;
+bottom: 0;
+
+background-color: white;
+color: black;
+text-align: center;
+}
+</style>
+<div class="footer">
+<p>This data was provided by the <a style='display: block; text-align: center;' href="https://www.bls.gov/iag/tgs/iag_index_alpha.htm" target="_blank">US Bureau of Labor Statistics</a></p>
+</div>
+"""
+st.markdown(footer, unsafe_allow_html=True)
