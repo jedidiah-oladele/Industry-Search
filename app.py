@@ -96,9 +96,9 @@ text-decoration: underline;
 .footer {
 position: relative;
 top: 200px;
-width: auto;
+width: fit-content;
 text-align: center;
-padding-bottom: 10px;
+padding-bottom: 15px;
 
 }
 </style>
