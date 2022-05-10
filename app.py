@@ -74,10 +74,10 @@ if __name__ == '__main__':
     # Button asthetics
     with st.container():
         st.write('')
-        col1, _, col3 = st.columns([1,2,1])
+        col1, col3 = st.columns([1,1])
         col1, col3 = st.columns(2)
-        random_button = col1.button('Random')
-        explore_button = col3.button('Explore')
+        random_button = col1.button('Random Selection')
+        explore_button = col3.button('Explore All')
         st.write('')
 
 
