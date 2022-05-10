@@ -48,7 +48,8 @@ if __name__ == '__main__':
 
     # Button asthetics
     st.write('')
-    col1, _, col3 = st.columns([1,1,1])
+    col1, _, col3 = st.columns([1,2,1])
+    col1, col2 = st.columns(2)
     random_button = col1.button('Random')
     explore_button = col3.button('Explore')
     st.write('')
@@ -72,7 +73,7 @@ if __name__ == '__main__':
 
 
     # TODO Turn to footer
-    #st.write('This data was provided by the [US Bureau of Labor Statistics](https://www.bls.gov/iag/tgs/iag_index_alpha.htm)')
+    #st.write('This data was provided by The [US Bureau of Labor Statistics](https://www.bls.gov/iag/tgs/iag_index_alpha.htm)')
 
 
 
