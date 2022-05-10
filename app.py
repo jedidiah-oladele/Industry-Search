@@ -47,8 +47,8 @@ def explore():
 
 if __name__ == '__main__':
 
-    st.set_page_config(page_title='Industry Generator')
-    st.markdown("<style>#MainMenu {visibility: hidden;}</style>", unsafe_allow_html=True)
+    st.set_page_config(page_title='Industry Search')
+    #st.markdown("<style>#MainMenu {visibility: hidden;}</style>", unsafe_allow_html=True)
 
     # Load and cahce the data
     @st.cache(allow_output_mutation=True)
@@ -58,7 +58,7 @@ if __name__ == '__main__':
 
 
     # Write Heading
-    st.markdown("<h1 style='text-align:center'>Industry Generator</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align:center'>Industry Search</h1>", unsafe_allow_html=True)
 
 
     # Button asthetics
