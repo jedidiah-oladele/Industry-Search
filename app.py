@@ -18,7 +18,7 @@ def get_random():
     st.markdown(f"##### Sector: {random_row['Sector']}")
     st.markdown(f"##### Industry: {random_row['Industry']}")
     
-    with st.expander('About'):
+    with st.expander('About', expanded=True):
         st.write(random_row['Industry_description'])
         st.write(f"[Read more]({random_row['Industry_URL']})")
     
