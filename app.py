@@ -94,7 +94,7 @@ text-decoration: underline;
 
 .footer {
 position: fixed;
-bottom: 20px;
+bottom: 25px;
 width: auto;
 
 
