@@ -49,7 +49,7 @@ if __name__ == '__main__':
     # Button asthetics
     st.write('')
     col1, _, col3 = st.columns([1,2,1])
-    col1, col2 = st.columns(2)
+    col1, col3 = st.columns(2)
     random_button = col1.button('Random')
     explore_button = col3.button('Explore')
     st.write('')
@@ -97,9 +97,9 @@ text-decoration: underline;
 position: relative;
 top: 200px;
 width: auto;
-
-
 text-align: center;
+padding-bottom: 10px;
+
 }
 </style>
 <div class="footer">
