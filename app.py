@@ -3,7 +3,20 @@ import pandas as pd
 import random
 
 
-TASKS = ['Data Collection and Cleaning', 'Exploratory Data Analysis', 'Data Visualization', 'Article and Explainer blog', 'Modelling and Deployment']
+TASKS = ['Data Collection and Cleaning',
+        'Exploratory Data Analysis',
+        'Data Visualization',
+        'Article and Explainer blog',
+        'Modelling and Deployment'
+        ]
+
+
+data_source="""
+<div class="footer">
+<p style="font-size:0.9em; text-align:center; padding:30px">This data was provided by The <a href="https://www.bls.gov/iag/tgs/iag_index_alpha.htm">US Bureau of Labor Statistics</a></p>
+</div>
+"""
+
 
 
 def get_random():
@@ -18,6 +31,9 @@ def get_random():
     with st.expander('About'):
         st.write(random_row['Industry_description'])
         st.write(f"[Read more]({random_row['Industry_URL']})")
+    
+    st.markdown(data_source, unsafe_allow_html=True)
+
 
 
 
@@ -32,6 +48,8 @@ def explore():
         st.write(selected_row['Industry_description'].iloc[0])
         st.write(f"[Read more]({selected_row['Industry_URL'].iloc[0]})")
 
+    st.markdown(data_source, unsafe_allow_html=True)
+
 
 
 
@@ -39,7 +57,8 @@ def explore():
 
 if __name__ == '__main__':
 
-    st.set_page_config(page_title='Project Idea Generator')
+    st.set_page_config(page_title='Industry Generator')
+    st.markdown("<style>#MainMenu {visibility: hidden;}</style>", unsafe_allow_html=True)
 
     # Load and cahce the data
     @st.cache(allow_output_mutation=True)
@@ -49,7 +68,7 @@ if __name__ == '__main__':
 
 
     # Write Heading
-    st.markdown("<h1 style='text-align:center'>Project Idea Generator</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align:center'>Industry Generator</h1>", unsafe_allow_html=True)
 
 
     # Button asthetics
@@ -76,70 +95,3 @@ if __name__ == '__main__':
             get_random()
         elif selected_page == 'explore':
             explore()
-
-
-
-    # TODO Turn to footer
-    #st.write('This data was provided by The [US Bureau of Labor Statistics](https://www.bls.gov/iag/tgs/iag_index_alpha.htm)')
-    
-
-
-footer = """<style>
-footer {
-    visibility: visible;
-}
-footer:before {
-	content:'This data was provided by the US Bureau of Labor Statistics'; 
-	visibility: visible;
-	display: block;
-	position: relative;
-	top: 2px;
-}
-</style>
-"""
-
-
-footer2="""<style>
-a:link , a:visited{
-color: blue;
-background-color: transparent;
-text-decoration: underline;
-}
-
-a:hover,  a:active {
-color: red;
-background-color: transparent;
-text-decoration: underline;
-}
-
-.footer {
-position: absolute;
-left: 0;
-top: 200px;
-width: 100%;
-text-align: center;
-padding: 30px;
-}
-
-</style>
-<div class="footer">
-<p style="font-size:0.9em">This data was provided by the <a href="https://www.bls.gov/iag/tgs/iag_index_alpha.htm">US Bureau of Labor Statistics</a></p>
-</div>
-"""
-
-
-st.markdown(footer, unsafe_allow_html=True)
-st.markdown(footer2, unsafe_allow_html=True)
-
-
-
-
-# hide_streamlit_style = """
-#             <style>
-#             #MainMenu {visibility: hidden;}
-#             footer {visibility: hidden;}
-#             </style>
-#             """
-# st.markdown(hide_streamlit_style, unsafe_allow_html=True)
-
-
